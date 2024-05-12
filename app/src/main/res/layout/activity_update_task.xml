@@ -7,7 +7,7 @@
     android:background="@color/black"
     android:gravity="center"
     android:padding="20dp"
-    tools:context=".UpdateCard">
+    tools:context=".UpdateTask">
 
     <TextView
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
         android:fontFamily="sans-serif"/>
 
     <EditText
-        android:id="@+id/create_title"
+        android:id="@+id/createTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Task"
@@ -30,7 +30,7 @@
         android:textColor="@color/white" />
 
     <EditText
-        android:id="@+id/create_priority"
+        android:id="@+id/createPriority"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -46,7 +46,7 @@
         android:orientation="horizontal"
         android:layout_marginTop="25dp">
         <Button
-            android:id="@+id/update_button"
+            android:id="@+id/updateButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Update"/>
@@ -57,7 +57,7 @@
             android:layout_weight="1"/>
 
         <Button
-            android:id="@+id/delete_button"
+            android:id="@+id/deleteButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#FF5722"
