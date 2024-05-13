@@ -17,10 +17,11 @@ interface DAO {
     @Delete
     suspend fun deleteTask(entity: com.example.taskifyy.Entity)
 
-    @Query("DELETE from to_do")
+    @Query("DELETE FROM To_Do")
     suspend fun deleteAll()
 
-    @Query("SELECT * from to_do")
-    suspend fun getTasks():List<TaskInfo>
+    @Query("SELECT * FROM To_Do")
+    suspend fun getTasks(): List<TaskInfo>
+
 
 }

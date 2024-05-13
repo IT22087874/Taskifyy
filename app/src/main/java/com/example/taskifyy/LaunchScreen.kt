@@ -10,12 +10,12 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class LaunchScreen : AppCompatActivity() {
-    private lateinit var database: myDatabase
+    private lateinit var database: MyDatabase
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.launch_screen)
         database = Room.databaseBuilder(
-            applicationContext, myDatabase::class.java, "To_Do"
+            applicationContext, MyDatabase::class.java, "To_Do"
         ).build()
         GlobalScope.launch {
             DataObject.listdata = database.dao().getTasks() as MutableList<TaskInfo>

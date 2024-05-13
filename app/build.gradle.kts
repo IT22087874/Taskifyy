@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    // Add the Kotlin Kapt plugin for annotation processing
+    id("kotlin-kapt")
 }
 
 android {
@@ -29,29 +31,41 @@ android {
             )
         }
     }
+
     compileOptions {
+        // Set Java and Kotlin source compatibility to 1.8
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
+        // Set JVM target to 1.8
         jvmTarget = "1.8"
     }
+
+    // Enable Kotlin annotation processing
+    kapt {
+        correctErrorTypes = true
+    }
+
     buildFeatures {
         compose = true
-        viewBinding=true
+        viewBinding = true
     }
+
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
     }
+
     packaging {
         resources {
+            // Exclude unnecessary resources
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
 }
 
 dependencies {
-
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
     implementation("androidx.activity:activity-compose:1.9.0")
@@ -64,6 +78,9 @@ dependencies {
     implementation("androidx.cardview:cardview:1.0.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
+    // Add the Room annotation processor dependency
+    kapt("androidx.room:room-compiler:2.6.1")
+
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")

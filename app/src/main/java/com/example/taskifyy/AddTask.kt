@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 class AddTask : AppCompatActivity() {
 
     private lateinit var binding: ActivityAddTaskBinding
-    private lateinit var database: myDatabase
+    private lateinit var database: MyDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +19,7 @@ class AddTask : AppCompatActivity() {
         setContentView(binding.root)
 
         database = Room.databaseBuilder(
-            applicationContext, myDatabase::class.java, "To_Do"
+            applicationContext, MyDatabase::class.java, "To_Do"
         ).build()
 
         binding.save.setOnClickListener {

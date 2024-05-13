@@ -11,7 +11,7 @@ import androidx.room.Room
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private lateinit var database: myDatabase
+    private lateinit var database: MyDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Initialize database
-        database = Room.databaseBuilder(applicationContext, myDatabase::class.java, "To_Do").build()
+        database = Room.databaseBuilder(applicationContext, MyDatabase::class.java, "To_Do").build()
 
         // Set click listeners
         binding.addTaskButton.setOnClickListener {
